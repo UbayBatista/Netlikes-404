@@ -1,0 +1,25 @@
+<h2 class="genre-title">{{ genero.nombre }}</h2>
+
+<div class="netflix-wrapper">
+
+  <button class="nav-btn left"
+          *ngIf="genero.canScrollLeft"
+          (click)="scrollLeft()">
+    ‹
+  </button>
+
+  <div class="netflix-row" #scrollContainer>
+    <div class="netflix-slider">
+      <div class="pelicula-item" *ngFor="let pelicula of genero.peliculas">
+        <app-pelicula [imagen]="pelicula.imagen" [titulo]="pelicula.titulo"></app-pelicula>
+      </div>
+    </div>
+  </div>
+
+  <button class="nav-btn right"
+          *ngIf="genero.canScrollRight"
+          (click)="scrollRight()">
+    ›
+  </button>
+
+</div>

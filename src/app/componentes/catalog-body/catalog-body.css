@@ -1,0 +1,51 @@
+.search-wrapper {
+  margin-top: 40px;      /* separa de la parte superior */
+  margin-bottom: 30px;   /* separa de los géneros */
+  display: flex;
+  justify-content: center; /* centra horizontalmente */
+}
+
+.search-input {
+  max-width: 500px;      /* evita que sea demasiado ancha */
+  width: 100%;           /* responsive */
+  padding: 12px 18px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+}
+
+/* Estilo oscuro tipo Netflix (opcional) */
+.search-input {
+  border: 1px solid #333;
+  color: black;
+}
+
+.search-input::placeholder {
+  color: #888;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .search-input {
+    max-width: 400px;
+    font-size: 1rem;
+    padding: 10px 16px;
+  }
+}
+
+/* Móviles grandes */
+@media (max-width: 768px) {
+  .search-input {
+    max-width: 320px;
+    font-size: 0.95rem;
+    padding: 9px 14px;
+  }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+  .search-input {
+    max-width: 260px;
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+}

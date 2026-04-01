@@ -1,0 +1,124 @@
+/* Título */
+.genre-title {
+  font-size: 1.6rem;          /* tamaño más elegante */
+  font-weight: 600;           /* negrita suave */
+  margin: 0 0 0 20px;      /* separado del borde izquierdo */
+  color: #000;                /* estilo Netflix */
+  letter-spacing: 0.5px;      /* un toque más fino */
+}
+
+/* Contenedor general */
+.netflix-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* Ocultar scrollbars */
+.netflix-row {
+  overflow-x: auto;
+  scrollbar-width: none; /* Firefox */
+}
+
+.netflix-row::-webkit-scrollbar {
+  display: none; /* Chrome */
+}
+
+/* Slider horizontal */
+.netflix-slider {
+  display: flex;
+  gap: 16px;
+  padding: 10px 0;
+  padding-left: 20px; 
+}
+
+/* Tarjetas */
+.pelicula-item {
+  flex: 0 0 180px;
+  height: 260px;
+  transition: transform 0.2s ease;
+}
+
+.pelicula-item:hover {
+  transform: scale(1.08);
+}
+
+/* Botones laterales */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background-color: transparent;
+  color: black;
+  border: none;
+  font-size: 48px;
+  display: flex;               /* ← CENTRADO PERFECTO */
+  align-items: center;         /* ← CENTRADO VERTICAL */
+  justify-content: center;     /* ← CENTRADO HORIZONTAL */
+  width: 45px;
+  height: 80px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.nav-btn {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.netflix-wrapper:hover .nav-btn {
+  opacity: 1;
+}
+
+
+.nav-btn:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+}
+
+/* Ocultar botones en pantallas pequeñas (móvil y tablet) */
+@media (max-width: 1024px) {
+  .nav-btn {
+    display: none !important;
+  }
+  .pelicula-item {
+    flex: 0 0 150px;
+    height: 200px;
+  }
+
+  .genre-title {
+    font-size: 1.4rem;
+  }
+}
+
+/* Móviles grandes */
+@media (max-width: 768px) {
+  .pelicula-item {
+    flex: 0 0 130px;
+    height: 160px;
+  }
+
+  .genre-title {
+    font-size: 1.2rem;
+  }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+  .pelicula-item {
+    flex: 0 0 110px;
+    height: 130px;
+  }
+
+  .genre-title {
+    font-size: 1.05rem;
+  }
+}
