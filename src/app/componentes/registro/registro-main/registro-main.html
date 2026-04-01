@@ -20,7 +20,7 @@
                 </div>
 
                 <div *ngSwitchCase="4"> 
-                    <app-paso4 (alAtras)="anteriorPaso()"></app-paso4>
+                    <app-paso4 (alAtras)="anteriorPaso()" (alFinalizar)="manejarFinalizacion($event)"></app-paso4>
                 </div>
             </div>
         </div>

@@ -27,4 +27,8 @@ export class RegistroMain {
             this.pasoActual--;
         }
     }
+
+    manejarFinalizacion(generos: string[]) {
+    // Aquí se podrá navegar al home cuando exista this.router.navigate(['/home']);
+    console.log('Registro finalizado con géneros seleccionados:', generos);}
 }

@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [FormsModule, CommonModule],
   templateUrl: './paso2.html',
-  styleUrl: './paso2.css'
+  styleUrl: '../pasos.css'
 })
 export class Paso2 {
   @Output() alSiguiente = new EventEmitter<void>();

@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './paso4.html',
-  styleUrl: './paso4.css'
+  styleUrls: ['../pasos.css', './paso4.css']
 })
 export class Paso4 {
   @Output() alFinalizar = new EventEmitter<any>();

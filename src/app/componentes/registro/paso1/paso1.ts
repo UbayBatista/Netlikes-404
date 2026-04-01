@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [FormsModule],
   templateUrl: './paso1.html',
-  styleUrl: './paso1.css'
+  styleUrls: ['../pasos.css', './paso1.css']
 })
 export class Paso1 {
   @Output() alSiguiente = new EventEmitter<void>();
