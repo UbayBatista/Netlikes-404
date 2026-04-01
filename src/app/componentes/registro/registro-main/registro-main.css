@@ -31,9 +31,35 @@
   margin-bottom: 1rem;
 }
 
-@media (max-width: 400px) {
-  .main-container {
-    flex-direction: column;
-    overflow-y: auto;
-  }
+/* Tablet */
+@media (max-width: 1024px) {
+    .right-side {
+        padding: 30px;
+    }
+}
+
+/* Móviles grandes (Cambio de 2 columnas a 1 columna) */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+        overflow-y: auto;
+    }
+
+    .left-side, .right-side {
+        flex: none;
+        width: 100%;
+        height: auto;
+    }
+
+    .right-side {
+        padding: 40px 20px;
+        align-items: flex-start;
+    }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.8rem;
+    }
 }

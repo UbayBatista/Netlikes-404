@@ -31,3 +31,25 @@
   line-height: 1.4;
   color: #333;
 }
+
+/* Móviles grandes */
+@media (max-width: 768px) {
+    .brand-side {
+        height: auto;
+        padding: 30px 20px;
+    }
+
+    .logo-img {
+        width: 80px;
+        margin-bottom: 10px;
+    }
+
+    .brand-name {
+        font-size: 1.8rem;
+        margin-bottom: 5px;
+    }
+
+    .brand-slogan {
+        font-size: 1rem;
+    }
+}

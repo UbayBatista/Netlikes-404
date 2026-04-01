@@ -54,3 +54,29 @@
 .arrow-btn:last-child {
   color: #000;
 }
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .subtitle { font-size: 1.3rem; }
+}
+
+/* Móviles grandes */
+@media (max-width: 768px) {
+    .arrow-btn { font-size: 40px; }
+    
+    .terms-box { height: 150px; }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+    .form-input, .form-select {
+        padding: 10px 12px;
+        font-size: 0.95rem;
+    }
+
+    .subtitle { font-size: 1.1rem; }
+
+    .genres-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
