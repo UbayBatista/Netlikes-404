@@ -31,19 +31,21 @@
 </div>
 
 <div class="p-3 border-top border-dark border-2 w-100 mt-auto">
-    <div class="input-group">
-        <input 
-            #cajaTexto 
-            type="text" 
-            class="form-control border-dark" 
+    <div class="input-wrapper">
+    
+        <textarea 
+            #txtArea
             placeholder="Escribe un mensaje..."
-            (keyup.enter)="enviarMensaje(cajaTexto.value); cajaTexto.value = ''"
-        >
+            rows="1"
+            (input)="ajustarAltura(txtArea)"
+            (keydown.enter)="$event.preventDefault(); enviarMensaje(txtArea.value); txtArea.value=''; ajustarAltura(txtArea)"
+        ></textarea>
+
         <button 
-            class="btn btn-outline-dark px-4" 
             type="button" 
-            (click)="enviarMensaje(cajaTexto.value); cajaTexto.value = ''"
+            (click)="enviarMensaje(txtArea.value); txtArea.value=''; ajustarAltura(txtArea)"
         >▻</button>
+
     </div>
 </div>
 
