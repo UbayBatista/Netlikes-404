@@ -1,0 +1,24 @@
+<div class="sidebar-container">
+  <div class="search-box">
+    <input 
+      type="text" 
+      placeholder="Buscar foro" 
+      [(ngModel)]="busqueda"
+      class="search-input"
+    >
+  </div>
+
+  <div class="list-container">
+    <div 
+      *ngFor="let pelicula of peliculasForo; let i = index" 
+      class="foro-item" 
+      [class.active]="pelicula.activa"
+      (click)="seleccionarForo(i)"
+    >
+      <div class="foro-info" (click)="seleccionarForo(1)">
+        <span class="foro-name"> {{ pelicula.titulo }}</span>
+        <span class="foro-last-msg">{{ pelicula.ultimoMensaje }}</span>
+      </div>
+    </div>
+  </div>
+</div>

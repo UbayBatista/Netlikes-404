@@ -1,0 +1,89 @@
+.foro-container {
+  display: flex;
+  width: 100%;
+  height: calc(100vh - 60px);
+  background-color: #fff;
+  overflow: hidden;
+  position: relative;
+}
+
+.sidebar-foros {
+  flex: 0 0 300px;
+  border-right: 1px solid #eee;
+  height: 100%;
+  background-color: #f9f9f9;
+}
+
+.chat-main {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.back-btn { 
+  display: none; 
+}
+
+/* --- MÓVILES --- */
+@media (max-width: 768px) {
+    .sidebar-foros, .chat-main {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .sidebar-foros {
+        left: 0;
+        transform: translateX(0);
+        z-index: 5;
+    }
+
+    .chat-main {
+        left: 0;
+        transform: translateX(100%);
+        background: white;
+        z-index: 10;
+    }
+
+    .foro-container.show-chat .sidebar-foros {
+        transform: translateX(-100%);
+    }
+
+    .foro-container.show-chat .chat-main {
+        transform: translateX(0);
+    }
+
+    .back-btn {
+      background-color: #f8f9fa;
+      border: none;
+      color: #34A8DA;
+      padding: 10px 15px;
+      font-weight: bold;
+      cursor: pointer;
+      width: 100%;
+      text-align: left;
+      border-bottom: 1px solid #eee;
+  }
+}
+
+/* --- TABLETS/PC --- */
+@media (min-width: 769px) {
+    .sidebar-foros {
+        flex: 0 0 300px;
+        transform: none !important;
+        position: relative;
+    }
+
+    .chat-main {
+        flex: 1;
+        transform: none !important;
+        position: relative;
+    }
+    
+    .back-btn {
+        display: none;
+    }
+}
