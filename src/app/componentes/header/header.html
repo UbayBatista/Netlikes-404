@@ -1,0 +1,30 @@
+<nav class="navbar px-4 py-3">
+  <a class="navbar-brand text-white fw-bold fs-4" routerLink="/home"> Netlikes </a>
+
+  <div class="d-flex align-items-center gap-3">
+
+    <div class="position-relative" (click)="toggleNotificaciones()">
+       <button class="btn btn-link p-0 text-white"><i class="bi bi-bell fs-5"></i></button>
+      @if (tieneNotificaciones) {
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"> 0 </span>
+      }
+    </div>
+
+    <div (click)="irAlPerfil()">
+      <img
+        [src]="avatarUrl"
+        alt="Perfil"
+        class="rounded-circle avatar"
+      />
+    </div>
+  </div>
+</nav>
+
+<!-- Pop-up notificaciones -->
+@if (mostrarNotificaciones) {
+  <div class="notificaciones-popup">
+    <h6 class="text-white px-3 pt-3">Notificaciones</h6>
+    <hr class="border-secondary mx-3">
+    <p class="text-white-50 px-3">No tienes notificaciones nuevas.</p>
+  </div>
+}
