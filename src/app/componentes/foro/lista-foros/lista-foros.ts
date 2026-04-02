@@ -14,14 +14,13 @@ export class ListaForos {
   busqueda: string = '';
 
   peliculasForo = [
-    { titulo: 'Los juegos del hambre', ultimoMensaje: 'Mi personaje favorito es Prim', activa: true },
-    { titulo: 'Vaiana', ultimoMensaje: 'Me encantan las canciones', activa: false },
-    { titulo: 'Los juegos del hambre: sinsajo - Parte 2', ultimoMensaje: 'Tanto rollo para que se le muera al final la hermana', activa: false },
-    { titulo: 'Harry Potter y la piedra filosofal', ultimoMensaje: 'No entiendo como alimentaban al perro de tres cabezas', activa: false },
-    { titulo: 'Avatar', ultimoMensaje: 'Visualmente es insuperable', activa: false }
+    { titulo: 'Los juegos del hambre', activa: true },
+    { titulo: 'Vaiana', activa: false },
+    { titulo: 'Los juegos del hambre: sinsajo - Parte 2', activa: false },
+    { titulo: 'Harry Potter y la piedra filosofal', activa: false },
+    { titulo: 'Avatar', activa: false }
   ];
   seleccionarForo(index: number) {
-    //alert('¡Clic detectado en: ' + this.peliculasForo[index].titulo);
     this.foroClickeado.emit();
     console.log('Cambiando al foro de:', this.peliculasForo[index].titulo);
   }

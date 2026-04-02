@@ -16,7 +16,6 @@ export class ForoBody {
   verChat() {
     this.foroSeleccionado = true;
   }
-
   volverALista() {
     this.foroSeleccionado = false;
   }
