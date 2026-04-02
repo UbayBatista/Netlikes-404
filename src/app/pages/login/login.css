@@ -1,0 +1,48 @@
+.side-left {
+  display: none;
+  width: 50%;
+  min-height: 100vh;
+}
+
+.side-right {
+  width: 50%;
+  background-color: #141414;
+  min-height: 100vh;
+}
+
+.slogan-text {
+  max-width: 400px;
+  line-height: 1.8;
+}
+
+.forgot-password {
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.forgot-password:hover {
+  color: white !important;
+}
+
+.form-control::placeholder {
+  color: #aaa;
+}
+
+@media (max-width: 768px) {
+  .side-right {
+    width: 100%;
+    padding: 1rem 1.5rem !important;
+  }
+
+  .logo-mobile {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .container-fluid {
+    flex-direction: column;
+    padding-top: 80px;
+  }
+}

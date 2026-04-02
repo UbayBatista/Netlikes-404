@@ -1,0 +1,73 @@
+<div class="container-fluid min-vh-100 d-flex bg-dark">
+
+  <div class="logo-mobile d-flex d-md-none w-100 justify-content-center pt-4">
+    <h1 class="fw-bold text-white">Netlikes</h1>
+  </div>
+
+  <div class="side-left d-none d-md-flex flex-column justify-content-center align-items-start px-5">
+    <h1 class="display-4 fw-bold text-white mb-3">Netlikes</h1>
+    <p class="slogan-text text-white-50 fs-5">
+      Haz de tus gustos una excusa conectar con los demás. Descubre, comparte y conecta 
+      con otros amantes del cine y las series.
+    </p>
+  </div>
+
+  <div class="side-right d-flex flex-column justify-content-center px-5">
+    <h2 class="text-white fw-bold mb-3">Iniciar sesión</h2>
+
+    <div [formGroup]="formulario">
+
+      <div class="form-floating mb-3">
+          <input
+          type="email"
+          id="email"
+          placeholder=""
+          formControlName="email"
+          class="form-control bg-secondary border-0 text-white"
+          [ngClass]="{'is-invalid': formulario.get('email')?.invalid && formulario.get('email')?.touched}"
+          />
+          <label for="email">Correo electrónico</label>
+          @if (formulario.get('email')?.hasError('required') && formulario.get('email')?.touched) {
+              <div class="invalid-feedback">El correo es obligatorio.</div>
+          }
+          @if (formulario.get('email')?.hasError('email') && formulario.get('email')?.touched) {
+              <div class="invalid-feedback">Introduce un correo válido.</div>
+          }
+      </div>
+
+      <div class="position-relative mb-3">
+        <div class="form-floating">
+          <input
+            [type]="mostrarPassword ? 'text' : 'password'"
+            id="password"
+            placeholder=""
+            formControlName="password"
+            class="form-control bg-secondary border-0 text-white pe-5"
+            [ngClass]="{'is-invalid': formulario.get('password')?.invalid && formulario.get('password')?.touched}"
+          />
+          <label for="password">Contraseña</label>
+          @if (formulario.get('password')?.hasError('required') && formulario.get('password')?.touched) {
+            <div class="invalid-feedback">La contraseña es obligatoria.</div>
+          }
+        </div>
+        <button 
+          type="button"
+          class="btn btn-link text-white-50 position-absolute top-50 end-0 translate-middle-y pe-3"
+          (click)="togglePassword()">
+          <i [class]="mostrarPassword ? 'bi bi-eye-slash' : 'bi bi-eye'"></i>
+        </button>
+      </div>
+
+        <button class="btn btn-primary btn-lg w-100 mt-2" (click)="login()">  Iniciar sesión </button>
+
+    </div>
+
+    <p class="text-center text-white-50 mt-3 forgot-password" (click)="forgotPassword()"> ¿Olvidaste tu contraseña? </p>
+
+    <hr class="border-secondary">
+
+    <button class="btn btn-outline-light btn-lg w-100" (click)="createAccount()"> Crear cuenta </button>
+
+  </div>
+
+</div>
