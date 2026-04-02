@@ -4,7 +4,6 @@
   </aside>
 
   <main class="chat-main">
-    <button class="back-btn" (click)="volverALista()">⬅ Volver</button>
-    <app-ventana-chat></app-ventana-chat>
+    <app-ventana-chat ngSkipHydration (volver)="volverALista()"></app-ventana-chat>
   </main>
 </div>
