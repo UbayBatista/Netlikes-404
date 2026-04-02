@@ -1,0 +1,29 @@
+<div class="chat-container">
+  <header class="chat-header">
+    <button class="mobile-back-btn" (click)="irAtras()">&#10229;</button>
+    <h2> {{ tituloForo }}</h2>
+  </header>
+
+  <div class="messages-viewport">
+    <div *ngFor="let msg of mensajes" 
+        class="message-row" 
+        [class.mine]="msg.esMio">
+        <app-burbuja-mensaje [texto]="msg.texto" [usuario]="msg.usuario" [esMio]="msg.esMio" hora="12:45"></app-burbuja-mensaje>
+    </div>
+  </div>
+
+  <footer class="chat-footer">
+    <div class="input-wrapper">
+      <textarea 
+      #txtArea
+      [(ngModel)]="nuevoMensaje" 
+      placeholder="Escribe un mensaje..."
+      (input)="ajustarAltura(txtArea)"
+      (keydown.enter)="$event.preventDefault(); enviarMensaje(txtArea)"
+      rows="1"></textarea>
+      <button (click)="enviarMensaje(txtArea)" [disabled]="!nuevoMensaje">
+        ➤
+      </button>
+    </div>
+  </footer>
+</div>

@@ -1,0 +1,7 @@
+<div class="bubble-wrapper" [class.mine]="esMio">
+  <div class="bubble-content">
+    <span class="user-name" *ngIf="!esMio">{{ usuario }}</span>
+    <p class="text">{{ texto }}</p>
+    <span class="time">{{ hora }}</span>
+  </div>
+</div>

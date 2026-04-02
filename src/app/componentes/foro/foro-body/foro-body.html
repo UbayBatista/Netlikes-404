@@ -1,0 +1,9 @@
+<div class="foro-container" [class.show-chat]="foroSeleccionado">
+  <aside class="sidebar-foros">
+    <app-lista-foros (foroClickeado)="verChat()"></app-lista-foros>
+  </aside>
+
+  <main class="chat-main">
+    <app-ventana-chat ngSkipHydration (volver)="volverALista()"></app-ventana-chat>
+  </main>
+</div>
