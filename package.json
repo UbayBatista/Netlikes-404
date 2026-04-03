@@ -1,0 +1,7 @@
+{
+  "name": "netlikes-workspace",
+  "version": "1.0.0",
+  "scripts": {
+    "frontend": "cd frontend/Proyecto_angular && ng serve -o"
+  }
+}
