@@ -8,9 +8,10 @@ import { Social } from './componentes/Social/social';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
   imports: [RouterOutlet, RegistroMain, CatalogoBody, PerfilCompleto, ForoBody, Social],
-  templateUrl: './app.html',
-  styleUrl: './app.css'
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css'
 })
 export class App {
   protected readonly title = signal('NetLikes');
