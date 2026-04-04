@@ -31,4 +31,11 @@ public class Film{
 
     private List<Platform> platforms;
 
+    @ManyToMany
+    @JoinTable(
+        name = "belongs_to",
+        joinColumns = @JoinColumn(name = "film_id"),
+        inverseJoinColumns = @JoinColumn(name = "genre_id")
+    )
+    private List<Genre> genres;
 }

@@ -30,4 +30,13 @@ public class FilmController {
         return filmService.getFilmById(id);
     }
 
+    @PutMapping("/{id}")
+    public Film updateFilm(@PathVariable Integer id, @RequestBody Film film) {
+        return filmService.updateFilm(id, film);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteFilm(@PathVariable Integer id) {
+        filmService.deleteFilm(id);
+    }
 }
