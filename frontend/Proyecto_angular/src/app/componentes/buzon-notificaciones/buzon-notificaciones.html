@@ -1,0 +1,18 @@
+<div class="overlay" *ngIf="isOpen" (click)="close()"></div>
+
+<div class="modal" *ngIf="isOpen">
+  <div class="modal-header">
+    <h2>Notificaciones</h2>
+    <button class="close-btn" (click)="close()">✕</button>
+  </div>
+
+  <div class="content">
+    <app-notificacion
+      *ngFor="let notificacion of notificaciones"
+      [imagen]="notificacion.imagen"
+      [mensaje]="notificacion.mensaje">
+    </app-notificacion>
+  </div>
+</div>
+
+
