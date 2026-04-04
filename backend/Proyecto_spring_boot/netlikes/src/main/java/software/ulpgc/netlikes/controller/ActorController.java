@@ -18,8 +18,24 @@ public class ActorController {
         return actorService.getAllActors();
     }
 
+    @GetMapping("/{id}")
+    public Actor getActorById(@PathVariable Integer id) {
+        return actorService.getActorById(id);
+    }
+
     @PostMapping
     public Actor saveActor(@RequestBody Actor actor) {
         return actorService.saveActor(actor);
     }
+
+    @PutMapping("/{id}")
+    public Actor updateActor(@PathVariable Integer id, @RequestBody Actor actor) {
+        return actorService.updateActor(id, actor);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteActor(@PathVariable Integer id) {
+        actorService.deleteActor(id);
+    }
 }
+
