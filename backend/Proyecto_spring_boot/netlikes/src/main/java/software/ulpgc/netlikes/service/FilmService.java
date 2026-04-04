@@ -10,10 +10,10 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class FilmService{
 
-    private final FilmRepository filmrepository;
+    private final FilmRepository filmRepository;
 
     public List<Film> getAllFilms(){
-        return filmrepository.findAll();
+        return filmRepository.findAll();
     }
 
     public Film saveFilm(Film film){
@@ -25,7 +25,7 @@ public class FilmService{
     }
 
     public Film updateFilm(Integer id, Film updatedFilm) {
-        return filmrepository.findById(id)
+        return filmRepository.findById(id)
                 .map(film -> {
                     film.setAdult(updatedFilm.isAdult());
                     film.setFilmUrl(updatedFilm.getFilmUrl());
@@ -38,7 +38,7 @@ public class FilmService{
     }
 
     public void deleteFilm(Integer id) {
-        filmrepository.deleteById(id);
+        filmRepository.deleteById(id);
     }
 
 }

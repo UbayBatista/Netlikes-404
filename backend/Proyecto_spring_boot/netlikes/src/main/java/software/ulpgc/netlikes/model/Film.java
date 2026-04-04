@@ -9,7 +9,7 @@ import java.util.List;
 @NoArgsConstructor
 public class Film{
     @Id
-    private Integer ID_Film;
+    private Integer id;
 
     @Column(nullable = false)
     private boolean Adult;
