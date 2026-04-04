@@ -7,6 +7,7 @@ import java.util.List;
 @Table(name = "film")
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class Film{
     @Id
     private Integer id;

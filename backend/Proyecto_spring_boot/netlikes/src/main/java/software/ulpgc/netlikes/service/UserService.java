@@ -29,7 +29,10 @@ public class UserService {
         return userRepository.findById(id)
                 .map(user -> {
                     user.setName(updatedUser.getName());
-                    user.setEmail(updatedUser.getEmail());
+                    user.setBio(updatedUser.getBio());
+                    user.setAccountImage(updatedUser.getAccountImage());
+                    user.setAccountPrivacity(updatedUser.isAccountPrivacity());
+                    user.setFavoriteGenres(updatedUser.getFavoriteGenres());
                     return userRepository.save(user);
                 })
                 .orElse(null);
