@@ -5,11 +5,13 @@
   </header>
 
   <div class="messages-viewport">
-    <div *ngFor="let msg of mensajes" 
-        class="message-row" 
-        [class.mine]="msg.esMio">
+    @for (msg of mensajes(); track $index) {
+      <div class="message-row" [class.mine]="msg.esMio">
         <app-burbuja-mensaje [texto]="msg.texto" [usuario]="msg.usuario" [esMio]="msg.esMio" hora="12:45"></app-burbuja-mensaje>
     </div>
+    } @empty {
+      <p class="text-center text-muted p-4">No hay mensajes aún. ¡Sé el primero!</p>
+    }
   </div>
 
   <footer class="chat-footer">

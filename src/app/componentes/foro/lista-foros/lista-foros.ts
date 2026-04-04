@@ -1,17 +1,16 @@
-import { Component, Output, EventEmitter } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, Output, EventEmitter, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-lista-foros',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [FormsModule],
   templateUrl: './lista-foros.html',
   styleUrl: './lista-foros.css'
 })
 export class ListaForos {
   @Output() foroClickeado = new EventEmitter<void>();
-  busqueda: string = '';
+  busqueda = signal('');
 
   peliculasForo = [
     { titulo: 'Los juegos del hambre', activa: true },
@@ -21,6 +20,9 @@ export class ListaForos {
     { titulo: 'Avatar', activa: false }
   ];
   seleccionarForo(index: number) {
+    this.peliculasForo.forEach(p => p.activa = false);
+    this.peliculasForo[index].activa = true;
+    
     this.foroClickeado.emit();
     console.log('Cambiando al foro de:', this.peliculasForo[index].titulo);
   }

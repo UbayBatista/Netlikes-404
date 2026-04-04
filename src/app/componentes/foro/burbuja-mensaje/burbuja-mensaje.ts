@@ -1,10 +1,9 @@
 import { Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-burbuja-mensaje',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './burbuja-mensaje.html',
   styleUrl: './burbuja-mensaje.css'
 })

@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { ListaForos } from '../lista-foros/lista-foros';
 import { VentanaChat } from '../ventana-chat/ventana-chat';
-
+import { Header } from '../../header/header';
 @Component({
   selector: 'app-foro-body',
   standalone: true,
-  imports: [CommonModule, ListaForos, VentanaChat],
+  imports: [ListaForos, VentanaChat, Header],
   templateUrl: './foro-body.html',
   styleUrl: './foro-body.css'
 })
