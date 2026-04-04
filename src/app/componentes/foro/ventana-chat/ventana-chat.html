@@ -23,7 +23,7 @@
       (input)="ajustarAltura(txtArea)"
       (keydown.enter)="$event.preventDefault(); enviarMensaje(txtArea)"
       rows="1"></textarea>
-      <button (click)="enviarMensaje(txtArea)" [disabled]="!nuevoMensaje">
+      <button (click)="enviarMensaje(txtArea)" [disabled]="!nuevoMensaje()">
         ➤
       </button>
     </div>
