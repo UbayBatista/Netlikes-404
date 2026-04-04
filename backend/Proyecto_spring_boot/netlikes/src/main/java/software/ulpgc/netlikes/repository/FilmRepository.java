@@ -1,8 +1,7 @@
 package software.ulpgc.netlikes.repository;
-package software.ulpgc.netlikes.model.Film;
+import software.ulpgc.netlikes.model.Film;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-@Repository
 public interface FilmRepository extends JpaRepository<Film, Integer>{
 
 }

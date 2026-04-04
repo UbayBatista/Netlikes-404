@@ -1,9 +1,10 @@
 package software.ulpgc.netlikes.model;
 import jakarta.persistence.*;
 import lombok.*;
+import java.util.List;
 
 @Entity 
-@Table(name = "Films")
+@Table(name = "film")
 @Data
 @NoArgsConstructor
 public class Film{
@@ -14,12 +15,20 @@ public class Film{
     private boolean Adult;
 
     @Column(nullable = false, columnDefinition = "TEXT")
-    private String FilmURL;
+    private String FilmUrl;
 
     @Column(nullable = false, columnDefinition = "TEXT")
     private String Summary;
 
     @Column(columnDefinition = "TEXT")
     private String Trailer;
+
+    @ManyToMany
+    @JoinTable(name = "available", 
+        joinColumns = @JoinColumn(name = "ID_Film"),
+        inverseJoinColumns = @JoinColumn(name = "ID_Platform")    
+    )
+
+    private List<Platform> platforms;
 
 }
