@@ -3,7 +3,9 @@ import { Login } from './pages/login/login';
 import { Home } from './pages/home/home';
 import { RegistroMain } from './componentes/registro/registro-main/registro-main';
 import { ForoBody } from './componentes/foro/foro-body/foro-body';
-import { Social } from './componentes/Social/social';
+import { Social } from './pages/social/social';
+import { PerfilCompleto } from './pages/perfil/perfil-body';
+
 
 export const routes: Routes = [
   { path: 'login', component: Login },
@@ -11,5 +13,6 @@ export const routes: Routes = [
   { path: 'registro', component: RegistroMain },
   { path: 'foro', component: ForoBody },
   { path: 'social', component: Social },
-  { path: '', redirectTo: 'login', pathMatch: 'full' }
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'perfil', component: PerfilCompleto }
 ];
