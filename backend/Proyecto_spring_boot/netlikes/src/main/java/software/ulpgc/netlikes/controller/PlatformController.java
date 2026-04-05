@@ -7,7 +7,7 @@ import software.ulpgc.netlikes.service.PlatformService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/platform")
+@RequestMapping("/platforms")
 public class PlatformController {
     @Autowired
     private PlatformService platformService;
