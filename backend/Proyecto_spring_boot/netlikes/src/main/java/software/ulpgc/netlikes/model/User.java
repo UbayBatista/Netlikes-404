@@ -25,7 +25,7 @@ public class User {
 
     @ManyToMany
     @JoinTable(
-        name = "favorites", // Nombre de la tabla intermedia (Marcar_como_favorito)
+        name = "favorites",
         joinColumns = @JoinColumn(name = "user_id"),
         inverseJoinColumns = @JoinColumn(name = "genre_id")
     )
