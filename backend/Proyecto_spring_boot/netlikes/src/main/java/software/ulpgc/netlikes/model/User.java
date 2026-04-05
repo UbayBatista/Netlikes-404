@@ -20,7 +20,7 @@ public class User {
     @Column(nullable=false) private boolean watchedFilms;
     @Column(nullable=false) private boolean filmsToWatchLater;
     @Column(nullable=false) private boolean recommendedFilms;
-    @Column(nullable=true) private String accountImage;
+    @Column(nullable=true) private String profilePicture;
     @Column(nullable=true) private String bio;
 
     @OneToMany(mappedBy = "user")
@@ -29,8 +29,8 @@ public class User {
     @ManyToMany
     @JoinTable(
         name = "favorites",
-        joinColumns = @JoinColumn(name = "user_id"),
-        inverseJoinColumns = @JoinColumn(name = "genre_id")
+        joinColumns = @JoinColumn(name = "userId"),
+        inverseJoinColumns = @JoinColumn(name = "genreId")
     )
     private List<Genre> favoriteGenres;
 }

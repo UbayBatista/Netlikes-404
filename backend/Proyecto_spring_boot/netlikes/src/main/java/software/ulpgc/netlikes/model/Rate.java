@@ -11,12 +11,12 @@ import lombok.*;
 @NoArgsConstructor
 public class Rate {
     @Id
-    @Column(name = "user_email")
-    private User user;
+    @Column(name = "userEmail")
+    private String userId;
 
     @Id
-    @Column(name = "film_id")
-    private Film film;
+    @Column(name = "filmId")
+    private Integer filmId;
 
     @Column(nullable = false)
     private String score;

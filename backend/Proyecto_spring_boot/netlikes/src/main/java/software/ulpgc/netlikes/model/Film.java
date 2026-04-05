@@ -26,8 +26,8 @@ public class Film{
 
     @ManyToMany
     @JoinTable(name = "available", 
-        joinColumns = @JoinColumn(name = "ID_Film"),
-        inverseJoinColumns = @JoinColumn(name = "ID_Platform")    
+        joinColumns = @JoinColumn(name = "filmId"),
+        inverseJoinColumns = @JoinColumn(name = "platformId")    
     )
 
     private List<Platform> platforms;
@@ -39,8 +39,16 @@ public class Film{
     @ManyToMany
     @JoinTable(
         name = "belongs_to",
-        joinColumns = @JoinColumn(name = "film_id"),
-        inverseJoinColumns = @JoinColumn(name = "genre_id")
+        joinColumns = @JoinColumn(name = "filmId"),
+        inverseJoinColumns = @JoinColumn(name = "genreId")
     )
     private List<Genre> genres;
+
+    @ManyToMany
+    @JoinTable(
+        name = "participate_in",
+        joinColumns = @JoinColumn(name = "filmId"),
+        inverseJoinColumns = @JoinColumn(name = "actorId")
+    )
+    private List<Genre> participateIn;
 }

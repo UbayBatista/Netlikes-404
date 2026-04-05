@@ -30,7 +30,7 @@ public class UserService {
                 .map(user -> {
                     user.setName(updatedUser.getName());
                     user.setBio(updatedUser.getBio());
-                    user.setAccountImage(updatedUser.getAccountImage());
+                    user.setProfilePicture(updatedUser.getProfilePicture());
                     user.setAccountPrivacity(updatedUser.isAccountPrivacity());
                     user.setFavoriteGenres(updatedUser.getFavoriteGenres());
                     return userRepository.save(user);

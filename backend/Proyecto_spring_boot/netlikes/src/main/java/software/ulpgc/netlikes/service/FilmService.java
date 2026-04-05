@@ -32,6 +32,7 @@ public class FilmService{
                     film.setSummary(updatedFilm.getSummary());
                     film.setTrailer(updatedFilm.getTrailer());
                     film.setPlatforms(updatedFilm.getPlatforms());
+                    film.setParticipateIn(updatedFilm.getParticipateIn());
                     film.setGenres(updatedFilm.getGenres());
                     return filmRepository.save(film);
                 })
