@@ -22,4 +22,7 @@ public class User {
     @Column(nullable=false) private boolean recommendedFilms;
     @Column(nullable=true) private String accountImage;
     @Column(nullable=true) private String bio;
+
+    @OneToMany(mappedBy = "user")
+    private List<Watch> watchFilms;
 }

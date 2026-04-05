@@ -9,19 +9,19 @@ import java.util.List;
 @NoArgsConstructor
 public class Film{
     @Id
-    private Integer ID_Film;
+    private Integer id_film;
 
     @Column(nullable = false)
-    private boolean Adult;
+    private boolean adult;
 
     @Column(nullable = false, columnDefinition = "TEXT")
-    private String FilmUrl;
+    private String filmUrl;
 
     @Column(nullable = false, columnDefinition = "TEXT")
-    private String Summary;
+    private String summary;
 
     @Column(columnDefinition = "TEXT")
-    private String Trailer;
+    private String trailer;
 
     @ManyToMany
     @JoinTable(name = "available", 
@@ -31,4 +31,7 @@ public class Film{
 
     private List<Platform> platforms;
 
+    @OneToMany(mappedBy = "film")
+    @JsonIgnore
+    private List<Watch> watchUser;
 }

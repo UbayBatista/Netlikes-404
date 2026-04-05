@@ -8,9 +8,8 @@ import lombok.RequiredArgsConstructor;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/films")
+@RequestMapping("/films")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "http://localhost:4200")
 public class FilmController {
 
     private final FilmService filmService;
