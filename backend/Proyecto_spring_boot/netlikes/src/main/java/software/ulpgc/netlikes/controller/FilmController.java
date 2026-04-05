@@ -1,6 +1,5 @@
 package software.ulpgc.netlikes.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import software.ulpgc.netlikes.model.Film;
 import software.ulpgc.netlikes.service.FilmService;
@@ -29,4 +28,13 @@ public class FilmController {
         return filmService.getFilmById(id);
     }
 
+    @PutMapping("/{id}")
+    public Film updateFilm(@PathVariable Integer id, @RequestBody Film film) {
+        return filmService.updateFilm(id, film);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteFilm(@PathVariable Integer id) {
+        filmService.deleteFilm(id);
+    }
 }

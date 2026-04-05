@@ -2,6 +2,7 @@ package software.ulpgc.netlikes.model;
 
 import jakarta.persistence.*;
 import lombok.*;
+import java.util.List;
 
 @Entity
 @Table(name = "genre") 
@@ -16,4 +17,7 @@ public class Genre {
 
     @Column(nullable = false)
     private String name;
+
+    @ManyToMany(mappedBy = "genres")
+    private List<Film> films;
 }

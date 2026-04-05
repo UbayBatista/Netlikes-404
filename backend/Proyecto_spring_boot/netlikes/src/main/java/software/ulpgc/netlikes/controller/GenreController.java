@@ -7,7 +7,7 @@ import software.ulpgc.netlikes.service.GenreService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/genre")
+@RequestMapping("/genres")
 public class GenreController {
 
     @Autowired

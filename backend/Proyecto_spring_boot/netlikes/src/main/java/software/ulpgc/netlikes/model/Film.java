@@ -7,9 +7,10 @@ import java.util.List;
 @Table(name = "film")
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class Film{
     @Id
-    private Integer id_film;
+    private Integer id;
 
     @Column(nullable = false)
     private boolean adult;
@@ -34,4 +35,12 @@ public class Film{
     @OneToMany(mappedBy = "film")
     @JsonIgnore
     private List<Watch> watchUser;
+    
+    @ManyToMany
+    @JoinTable(
+        name = "belongs_to",
+        joinColumns = @JoinColumn(name = "film_id"),
+        inverseJoinColumns = @JoinColumn(name = "genre_id")
+    )
+    private List<Genre> genres;
 }

@@ -7,7 +7,7 @@ import software.ulpgc.netlikes.service.ActorService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/actor")
+@RequestMapping("/actors")
 public class ActorController {
 
     @Autowired

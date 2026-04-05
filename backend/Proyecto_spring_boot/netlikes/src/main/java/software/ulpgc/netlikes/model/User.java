@@ -2,11 +2,11 @@ package software.ulpgc.netlikes.model;
 import jakarta.persistence.*;
 import lombok.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name="user")
-@Getter 
-@Setter
+@Data
 @NoArgsConstructor 
 @AllArgsConstructor
 public class User {
@@ -25,4 +25,12 @@ public class User {
 
     @OneToMany(mappedBy = "user")
     private List<Watch> watchFilms;
+    
+    @ManyToMany
+    @JoinTable(
+        name = "favorites",
+        joinColumns = @JoinColumn(name = "user_id"),
+        inverseJoinColumns = @JoinColumn(name = "genre_id")
+    )
+    private List<Genre> favoriteGenres;
 }
